@@ -1,0 +1,25 @@
+@font-face {
+	font-family: Modern Serif;
+	src:url("Modern Serif.ttf");
+}
+
+#home{
+	background: url("book1.jpg") no-repeat center center fixed;
+	background-size: cover;
+	height: 630px;
+	width: 1348px;
+	margin-left:-7px;
+	margin-top:-7px;
+	
+}
+
+
+#recommend{
+	background: url("books.jpg") no-repeat center center fixed;
+	background-size: cover;
+	height: 630px;
+	width: 1348px;
+	margin-left:-7px;
+	margin-top:-7px;
++
+}
