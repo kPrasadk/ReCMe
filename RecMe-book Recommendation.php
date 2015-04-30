@@ -2,16 +2,16 @@
 <html> 
 <head>
 	<title>Homepage</title>
-	<link rel="stylesheet" href="home.css">
-	<link rel="stylesheet" href="recommendpage.css">
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<link rel="stylesheet" href="bootstrap.css">
-	<link rel="stylesheet" href="menu-bar.css">
+	<link rel="stylesheet" href="assets/css/home.css">
+	<link rel="stylesheet" href="assets/css/recommendpage.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/menu-bar.css">
     
-	<script type="text/javascript" src="menu-bar.js"></script>
+	<script type="text/javascript" src="assets/js/menu-bar.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="smoothScroll.js"></script>
+	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 </head>
 
 <body>

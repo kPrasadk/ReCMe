@@ -1,0 +1,16 @@
+#formlook{
+		width: 1000px;
+		margin-left:200px;
+		
+		background-color:white;
+		
+	}
+	
+#inside{
+		padding:40px 60px 20px 60px;
+}
+
+.book{
+		margin-bottom:15px;
+}
+
