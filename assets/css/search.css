@@ -20,3 +20,12 @@
 	padding-left:40px;
 	padding-top:30px;
 }
+
+#bookName
+{
+	display:inline;
+	width:40%;
+	padding:20px;
+	margin-left:40px;
+}
+

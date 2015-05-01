@@ -83,6 +83,8 @@
 		<section id="search">
 			<div id="rectable">
 				<h1 style="padding-left:40px;padding-top:40px;">Search recommendations</h1>
+				<input type="text" class="form-control " id="bookName" name="bookName" placeholder="Exact name of the book">
+				<input type="submit"  class="btn btn-primary " id="submit" style="background-color:#000099;margin-left:20px;" value="Submit" >
 				<h3 style="padding-left:40px;">Recent recommendations</h3>
 				<div id="toprec">
 				</div>
