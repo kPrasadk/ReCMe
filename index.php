@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 </head>
 
-<body>
+<body onload="updateTopRec();">
 		<header>
 		<div id="sse1">
   			<div id="sses1">
@@ -81,7 +81,8 @@
 
 		<!--Search section-->
 		<section id="search">
-
+			<div id="toprec">
+			</div>
 		</section>
 
 
@@ -109,6 +110,23 @@
 				function search()
 				{
 					window.open("search.html");
+				}
+
+				function updateTopRec()
+				{
+					var xmlhttp = new XMLHttpRequest();
+        			xmlhttp.onreadystatechange = function() {
+        				document.getElementById("toprec").innerHTML = "Ready state:" + xmlhttp.readyState + " Status:" + xmlhttp.status;
+            			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                			document.getElementById("toprec").innerHTML = xmlhttp.responseText;
+            			}
+            			else
+            			{
+            				//document.getElementById("toprec").innerHTML = "Can't find script on server";	
+            			}
+        			}
+        			xmlhttp.open("GET", "rec/rec.php", true);
+        			xmlhttp.send();					
 				}
 		</script>	
  

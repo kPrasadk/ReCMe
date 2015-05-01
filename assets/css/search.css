@@ -7,3 +7,12 @@
 	margin-top:-7px;
 +
 }
+
+#table_bg
+{
+	background-color: white;
+	width: 80%;
+	margin-left:150px;
+	;
+	height:200px;
+}
