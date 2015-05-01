@@ -6,7 +6,7 @@
 #home{
 	background: url("../img/book1.jpg") no-repeat center center fixed;
 	background-size: cover;
-	height: 630px;
+	height: 700px;
 	width: 1348px;
 	margin-left:-7px;
 	margin-top:-7px;
@@ -17,7 +17,7 @@
 #recommend{
 	background: url("../img/books.jpg") no-repeat center center fixed;
 	background-size: cover;
-	height: 630px;
+	height: 650px;
 	width: 1348px;
 	margin-left:-7px;
 	margin-top:-7px;

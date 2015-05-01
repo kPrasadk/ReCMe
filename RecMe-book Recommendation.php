@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/menu-bar.css">
+	<link rel="stylesheet" href="assets/css/search.css">
     
 	<script type="text/javascript" src="assets/js/menu-bar.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -50,9 +51,13 @@
 						<div class="form-group">
 							<form action="insert.php" method="post">
 							<label for="bookName1">Book name</label>   
+							<div class="space">
 							<input type="text" class="form-control " id="bookName1" name="bookName1" placeholder="Exact name of the book">
+							</div>
 							<label for="author1">Author</label>
-							<input type="text" class="form-control" id="author" name="author1" placeholder="Book Author(s)">
+							<div class="space">
+							<input type="text" class="form-control" id="author1" name="author1" placeholder="Book Author(s)">
+							</div>
 							<input type="submit"  class="btn btn-primary " style="background-color:#000099;" value="Submit" >
 							</form>
 						</div>
@@ -66,7 +71,7 @@
 				<div class="checkbox">
 					<label><input type="checkbox"> Remember me</label>
 				</div>
-				<button type="submit" style="background-color:#336600;" class="btn btn-primary">Submit</button>
+
 			
 			</div>
 			</section>
@@ -75,6 +80,10 @@
 		</section>
 
 		<!--Search section-->
+		<section id="search">
+
+		</section>
+
 
 </body>
 		<script language="javascript">
@@ -102,25 +111,5 @@
 					window.open("search.html");
 				}
 		</script>	
-	<?php 
-		$con= mysqli_connect("localhost","root","root"); 
-		if (!$con) { 
-			die('Could not connect to MySQL: ' ); 
-		} 
-		else
-		{
-			$sql_createdb = "CREATE DATABASE Book_Recommendation";
-			$queryStatus=mysqli_query($con,$sql_createdb);
-		    mysqli_select_db($con,"Book_Recommendation");
-			$sql_createtable = " CREATE TABLE  Books (
-			Name VARCHAR(30),
-			authorName VARCHAR(30) ) ";
-			$queryStatus=mysqli_query($con,$sql_createtable);
-			if($queryStatus==TRUE)
-					echo "\nTable created Successfully";
-			else
-					echo "Table not created ";
-		}
-		mysqli_close($con); 
-	?> 
+ 
 </html>

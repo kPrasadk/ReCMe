@@ -1,0 +1,9 @@
+#search{
+	background: url("../img/book1.jpg") no-repeat center center ;
+	background-size: cover;
+	height: 630px;
+	width: 1348px;
+	margin-left:-7px;
+	margin-top:-7px;
++
+}
