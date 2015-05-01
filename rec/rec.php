@@ -19,9 +19,9 @@
 			</style>
 			<table class=\"tg\">
 			  <tr>
-			    <th class=\"tg-031e\">Sl no</th>
-			    <th class=\"tg-031e\">Name of the book</th>
-    			<th class=\"tg-031e\">Author</th>
+			    <th class=\"tg-031a\">Sl no</th>
+			    <th class=\"tg-031b\">Name of the book</th>
+    			<th class=\"tg-031c\">Author</th>
   			</tr>";
 		while($row=mysqli_fetch_array($select))
 		{
@@ -30,9 +30,9 @@
 
 			$i = $i + 1;
 			echo "<tr>
-    				<td class=\"tg-031e\">$i</td>
-   					<td class=\"tg-031e\">$row[0]</td>
-   					<td class=\"tg-031e\">$row[1]</td>
+    				<td class=\"tg-031a\">$i</td>
+   					<td class=\"tg-031b\">$row[0]</td>
+   					<td class=\"tg-031c\">$row[1]</td>
   				</tr>";
 		}
 

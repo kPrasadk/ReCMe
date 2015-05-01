@@ -81,7 +81,11 @@
 
 		<!--Search section-->
 		<section id="search">
-			<div id="toprec">
+			<div id="rectable">
+				<h1 style="padding-left:40px;padding-top:40px;">Search recommendations</h1>
+				<h3 style="padding-left:40px;">Recent recommendations</h3>
+				<div id="toprec">
+				</div>
 			</div>
 		</section>
 
@@ -116,13 +120,12 @@
 				{
 					var xmlhttp = new XMLHttpRequest();
         			xmlhttp.onreadystatechange = function() {
-        				document.getElementById("toprec").innerHTML = "Ready state:" + xmlhttp.readyState + " Status:" + xmlhttp.status;
-            			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 			document.getElementById("toprec").innerHTML = xmlhttp.responseText;
             			}
             			else
             			{
-            				//document.getElementById("toprec").innerHTML = "Can't find script on server";	
+            				document.getElementById("toprec").innerHTML = "Can't find script on server";	
             			}
         			}
         			xmlhttp.open("GET", "rec/rec.php", true);
