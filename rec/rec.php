@@ -1,11 +1,6 @@
 <?php
-	$con= mysqli_connect("localhost","root","root"); 
-	if (!$con) { 
-		die('Could not connect to MySQL: ' ); 
-	} 
-	else
-	{
-		mysqli_select_db($con,"Book_Recommendation");
+	require_once("../includes/database.php");
+	
 		$query1="SELECT * 
 				 FROM Books
 				 GROUP BY Name
@@ -37,5 +32,4 @@
 		}
 
 		echo "</table>";
-	}
  ?>	
