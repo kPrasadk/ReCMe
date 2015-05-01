@@ -16,6 +16,7 @@
 {
     /*This will make the menu center-aligned. Removing this line will make the menu align left.*/
     padding-left: 150px;
+    display: inline;
 }
 
 #sses1 ul 
