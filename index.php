@@ -58,6 +58,10 @@
 							<div class="space">
 							<input type="text" class="form-control" id="author1" name="author1" placeholder="Book Author(s)">
 							</div>
+							<label for="bookno">No of Books</label> 
+							<div class="space">
+							<input type="text" class="form-control" id="bookno" name="bookno" placeholder="No_of_Books">
+							</div>
 							<input type="submit"  class="btn btn-primary " style="background-color:#000099;" value="Submit">
 							</form>
 						</div>
