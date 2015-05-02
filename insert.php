@@ -18,9 +18,10 @@ else
 			$sql_insert1 = "INSERT INTO Books VALUES
 							('$_POST[bookName1]',
 							'$_POST[author1]')";
+			$var=-1;
 			$sql_insert2 = "INSERT INTO Recommendation VALUES
 						('$_POST[bookName1]',
-						'$_POST[author1]','$_POST[bookno]')";
+						'$_POST[author1]','$_POST[bookno]',$var)";
 			$queryStatus=mysqli_query($con,$sql_insert1);
 			$queryStatus=mysqli_query($con,$sql_insert2);
 		}

@@ -9,15 +9,8 @@
 				 
 		$select=mysqli_query($con,$query1);
 		$i=0;
-		echo "<style type=\"text/css\">
-			.tg  {border-collapse:collapse;border-spacing:0;}
-			.tg .tg-031b{padding:10px 70px;}
-			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-			.tg .tg-031b{padding:10px 50px;}
-			.tg .tg-031a{padding:10px 20px;}
-			</style>
-			<table class=\"tg\">
+		echo "
+			<table class=\"table\" style=\"opacity:1.0;\">
 			  <tr>
 			    <th class=\"tg-031a\">Sl no</th>
 			    <th class=\"tg-031b\">Name of the book</th>
@@ -36,7 +29,8 @@
    					<td class=\"tg-031b\">$row[0]</td>
    					<td class=\"tg-031b\">$row[1]</td>
    					<td class=\"tg-031b\">$row[2]</td>
-   					<td class=\"tg-031b\"></td>
+   					<td class=\"tg-031c\"> <input type=\"number\" min=\"0\"  class=\"form-control\"  name=\"bookName\">
+   					</td>
   				</tr>";
 		}
 
