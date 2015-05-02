@@ -58,7 +58,7 @@
 							<div class="space">
 							<input type="text" class="form-control" id="author1" name="author1" placeholder="Book Author(s)">
 							</div>
-							<input type="submit"  class="btn btn-primary " style="background-color:#000099;" value="Submit" >
+							<input type="submit"  class="btn btn-primary " style="background-color:#000099;" value="Submit">
 							</form>
 						</div>
 						<!--<div class="form-group">
@@ -83,8 +83,8 @@
 		<section id="search">
 			<div id="rectable">
 				<h1 style="padding-left:40px;padding-top:40px;">Search recommendations</h1>
-				<input type="text" class="form-control " id="bookName" name="bookName" placeholder="Exact name of the book">
-				<input type="submit"  class="btn btn-primary " id="submit" style="background-color:#000099;margin-left:20px;" value="Submit" >
+				<input type="text" class="form-control " id="booksearch" name="bookName" placeholder="Exact name of the book">
+				<input type="submit" class="btn btn-primary " id="submit" style="background-color:#000099;margin-left:20px;" value="Submit"  onclick="displayrec();" >
 				<h3 style="padding-left:40px;">Recent recommendations</h3>
 				<div id="toprec">
 				</div>
@@ -132,6 +132,28 @@
         			}
         			xmlhttp.open("GET", "rec/rec.php", true);
         			xmlhttp.send();					
+				}
+
+				function displayrec()
+				{
+
+					var xmlhttp = new XMLHttpRequest();
+					//document.getElementById("toprec").innerHTML = "Checking"+xmlhttp.readyState+"status"+xmlhttp.status;
+        			xmlhttp.onreadystatechange = function() {
+        				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                			document.getElementById("toprec").innerHTML = xmlhttp.responseText;
+            			}
+            			else
+            			{
+            				document.getElementById("toprec").innerHTML = "Can't find script on server";	
+            			}
+        			}
+        			var element=document.getElementById("booksearch").value;
+        			element="bookname="+element;
+        			var res = encodeURI(element);
+        			res="rec/display.php"+"?"+res ;
+        			xmlhttp.open("GET", res, true);
+        			xmlhttp.send();	
 				}
 		</script>	
  
