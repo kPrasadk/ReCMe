@@ -85,7 +85,7 @@
 				<h1 style="padding-left:40px;padding-top:40px;">Search recommendations</h1>
 				<input type="text" class="form-control " id="booksearch" name="bookName" placeholder="Exact name of the book">
 				<input type="submit" class="btn btn-primary " id="submit" style="background-color:#000099;margin-left:20px;" value="Submit"  onclick="displayrec();" >
-				<h3 style="padding-left:40px;">Recent recommendations</h3>
+				<h3 style="padding-left:40px;" id="recent">Recent recommendations</h3>
 				<div id="toprec">
 				</div>
 			</div>
@@ -136,7 +136,8 @@
 
 				function displayrec()
 				{
-
+					var heading=document.getElementById("recent");
+					heading.innerHTML="Search results";
 					var xmlhttp = new XMLHttpRequest();
 					//document.getElementById("toprec").innerHTML = "Checking"+xmlhttp.readyState+"status"+xmlhttp.status;
         			xmlhttp.onreadystatechange = function() {
