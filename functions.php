@@ -9,7 +9,7 @@
 					FROM User 
 					WHERE UserID={$User['user_id']}";
 		$queryStatus=mysqli_query($con,$sql_query);
-		echo $sql_query	;
+		echo $sql_query;
 		echo $db_serv;
 		if(mysqli_fetch_array($queryStatus)==false)
 		{

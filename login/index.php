@@ -15,18 +15,23 @@
 	$gClient->setRedirectUri($google_redirect_url);
 	$gClient->setDeveloperKey($google_developer_key);
 	$gClient->setHostedDomain($email_domain);
+	$gClient->setApprovalPrompt("auto");
+	$gClient->setAccessType("online");
 	$gClient->addScope('profile');
 	$gClient->addScope('email');
-	$gClient->addScope('openid');
+	//$gClient->addScope('openid');
 	//If user wish to log out, we just unset Session variable
 	if (isset($_REQUEST['logout']))
 	{
-	  unset($_SESSION['token']);
-	  unset($_SESSION['user_id']);
-	  unset($_SESSION['user_email']);
-	  $gClient->revokeToken();
-	  header('Location: ' . filter_var($base_url, FILTER_SANITIZE_URL)); //redirect user back to page
-	  return;
+
+		$gClient->setAccessToken($_SESSION['token']);
+	 	$gClient->revokeToken();
+	 	unset($_SESSION['token']);
+		unset($_SESSION['user_id']);
+		unset($_SESSION['user_email']);
+		
+	 	header('Location: ' . filter_var($base_url, FILTER_SANITIZE_URL)); //redirect user back to page
+	 	return;
 	}
 	//If code is empty, redirect user to google authentication page for code.
 	//Code is required to aquire Access Token from google
