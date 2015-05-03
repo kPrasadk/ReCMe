@@ -23,7 +23,10 @@
   			    <li><a class="scroll" href="#about">About</a></li>
   			    <li><a class="scroll" href="#recommend">Recommend</a></li>
             	<li><a class="scroll" href="#search">Search</a></li>
-  			  </ul>
+              </ul>
+              <div id="button">
+              <button class="btn btn-default" type="submit" style="float:right;">Login</button>
+              </div>
  			 </div>
 		</div>
 		</header>	
@@ -90,7 +93,7 @@
 				<input type="text" class="form-control " id="booksearch" name="bookName" placeholder="Exact name of the book">
 				<input type="submit" class="btn btn-primary " id="submit" style="background-color:#000099;margin-left:20px;" value="Submit"  onclick="displayrec();" >
 				<h3 style="padding-left:40px;" id="recent">Recent recommendations</h3>
-				<div id="toprec">
+				<div id="toprec" style="overflow-y:scroll;">
 				</div>
 			</div>
 		</section>

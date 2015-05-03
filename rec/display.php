@@ -28,8 +28,8 @@
 			$i = $i + 1;
 			echo "<tr>
     				<td class=\"tg-031a\">$i</td>
-   					<td class=\"tg-031b\">$row[0]</td>
    					<td class=\"tg-031b\">$row[1]</td>
+   					<td class=\"tg-031b\">$row[2]</td>
   				</tr>";
 		}
 

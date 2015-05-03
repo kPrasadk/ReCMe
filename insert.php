@@ -11,16 +11,20 @@ else
 		mysqli_select_db($con,"Book_Recommendation");
 		$sql_search="SELECT *
 					 FROM Books 
-					 WHERE Name='$_POST[bookName1]'";
+					 WHERE Name='$_POST[bookName1]',Author='$_POST[author1]'";
+		$sql_num="SELECT *
+				  FROM Books";
+		$numrows=mysqli_num_rows(mysqli_query($con,$sql_num))+1;	
+		//echo "Number of rows...$numrows";	  				 
 		$queryStatus=mysqli_query($con,$sql_search);
 		if(mysqli_fetch_array($queryStatus)==false)
 		{					 
 			$sql_insert1 = "INSERT INTO Books VALUES
-							('$_POST[bookName1]',
+							($numrows,'$_POST[bookName1]',
 							'$_POST[author1]')";
 			$var=-1;
 			$sql_insert2 = "INSERT INTO Recommendation VALUES
-						('$_POST[bookName1]',
+						($numrows,'$_POST[bookName1]',
 						'$_POST[author1]','$_POST[bookno]',$var)";
 			$queryStatus=mysqli_query($con,$sql_insert1);
 			$queryStatus=mysqli_query($con,$sql_insert2);
@@ -32,7 +36,7 @@ else
 							 WHERE Book='$_POST[bookName1]'";
 				$queryStatus=mysqli_query($con,$sql_bookno);
 				$var=mysqli_fetch_row($queryStatus);
-				$num=$var[2]+$_POST[bookno];
+				$num=$var[3]+$_POST[bookno];
 				$sql_insert2 = "UPDATE Recommendation
 									SET No_of_Books='$num'
 									WHERE Book='$_POST[bookName1]'";		

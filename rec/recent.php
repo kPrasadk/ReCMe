@@ -24,12 +24,14 @@
 				break;
 
 			$i = $i + 1;
+			$num="booknum".$i;
 			echo "<tr>
     				<td class=\"tg-031a\">$i</td>
-   					<td class=\"tg-031b\">$row[0]</td>
+    				<input type=\"number\" id=\"none\" name=\"$i\" value=$row[0]>
    					<td class=\"tg-031b\">$row[1]</td>
    					<td class=\"tg-031b\">$row[2]</td>
-   					<td class=\"tg-031c\"> <input type=\"number\" min=\"0\"  class=\"form-control\"  name=\"bookName\">
+   					<td class=\"tg-031b\">$row[3]</td>
+   					<td class=\"tg-031c\"> <input type=\"number\" min=\"0\"  class=\"form-control\"  name=\"$num\">
    					</td>
   				</tr>";
 		}
