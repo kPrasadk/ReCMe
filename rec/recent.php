@@ -1,6 +1,6 @@
 
 <?php
-	require_once("../includes/database.php");
+		require_once("../includes/database.php");
 		
 		$query1="SELECT * 
 				 FROM Recommendation

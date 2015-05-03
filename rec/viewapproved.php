@@ -1,8 +1,7 @@
 <?php
-	//require_once("../includes/database.php");
+	require_once("../includes/database.php");
 		
-		echo "CDEFFEEF";
-		/*$query1="SELECT * 
+		$query1="SELECT * 
 				 FROM Recommendation
 				 WHERE Approved>0";
 			 
@@ -31,5 +30,5 @@
    					</td>
   				</tr>";
 		}
-		echo "</table>";  */
+		echo "</table>";  
  ?>	

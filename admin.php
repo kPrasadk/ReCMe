@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 </head>
 
-<body onload="updateRecentRec();" onload="displayapproved();">
+<body onload="update();">
 		<header>
 		<div id="sse1">
   			<div id="sses1">
@@ -24,6 +24,9 @@
   			    <li><a class="scroll" href="#recommend">Acknowledge</a></li>
             	<li><a class="scroll" href="#search">View Approved</a></li>
   			  </ul>
+  			   <div id="button">
+              <button class="btn btn-default" type="submit" style="float:right;">Login</button>
+              </div>
  			 </div>
 		</div>
 		</header>	
@@ -62,7 +65,7 @@
 		<section id="search">
 			<div id="rectable">
 				<h1 style="padding-left:40px;padding-top:40px;">Approved recommendations</h1>
-				<div id="approvedrec">
+				<div id="approvedrec" style="padding:30px 60px;overflow-y:scroll;">
 				</div>
 			</div>
 		</section>
@@ -96,6 +99,7 @@
 
 				function updateRecentRec()
 				{
+
 					var xmlhttp = new XMLHttpRequest();
         			xmlhttp.onreadystatechange = function() {
         				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -107,48 +111,36 @@
             			}
         			}
         			xmlhttp.open("GET", "rec/recent.php", true);
-        			xmlhttp.send();		
-
-
-        			var xml = new XMLHttpRequest();
-        			document.getElementById("approvedrec").innerHTML = "Checking"+xml.readyState+"status"+xml.status;
-					xml.onreadystatechange = function() {
-        				if (xml.readyState == 4 && xml.status == 200) {
-                			document.getElementById("approvedrec").innerHTML = xml.responseText;
-            			}
-            			else
-            			{
-            				//document.getElementById("approvedrec").innerHTML = "Can't find script on server";	
-            			}
-        			}
-        			xml.open("GET", "rec/viewapproved.php", true);
-        			xmlhttp.send();				
-				}
-
-				function displayrec()
-				{
-					var heading=document.getElementById("recent");
-					heading.innerHTML="Search results";
-					var xmlhttp = new XMLHttpRequest();
-					//document.getElementById("toprec").innerHTML = "Checking"+xmlhttp.readyState+"status"+xmlhttp.status;
-        			xmlhttp.onreadystatechange = function() {
-        				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                			document.getElementById("toprec").innerHTML = xmlhttp.responseText;
-            			}
-            			else
-            			{
-            				document.getElementById("toprec").innerHTML = "Can't find script on server";	
-            			}
-        			}
-        			var element=document.getElementById("booksearch").value;
-        			element="bookname="+element;
-        			var res = encodeURI(element);
-        			res="rec/display.php"+"?"+res ;
-        			xmlhttp.open("GET", res, true);
         			xmlhttp.send();	
 
 				}
 
+				function displayrec()
+				{
+					var xmlhttp = new XMLHttpRequest();
+        			document.getElementById("approvedrec").innerHTML = "Checking"+xmlhttp.readyState+"status"+xmlhttp.status;
+					xmlhttp.onreadystatechange = function() {
+        				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                			document.getElementById("approvedrec").innerHTML = xmlhttp.responseText;
+            			}
+            			else
+            			{
+            				document.getElementById("approvedrec").innerHTML = "Checking"+xmlhttp.readyState+"status"+xmlhttp.status;
+            				//document.getElementById("approvedrec").innerHTML = "Can't find script on server";	
+            			}
+        			}
+        			xmlhttp.open("GET", "rec/viewapproved.php", true);
+        			xmlhttp.send();	
+
+				}
+
+				function update()
+				{
+
+					updateRecentRec();
+					displayrec();
+
+				}
 		</script>	
  
 </html>

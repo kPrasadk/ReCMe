@@ -1,7 +1,7 @@
 <?php
 	
 	require_once("../includes/database.php");
-		echo "Checking outside..";
+		//echo "Checking outside..";
 		$i=1;
 		while($_POST[$i]!== NULL)
 		{
