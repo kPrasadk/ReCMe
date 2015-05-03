@@ -1,3 +1,21 @@
+<?php
+	session_start();
+	require_once "functions.php";
+	require_once "includes/credentials.php";
+	if(!isset($_SESSION['token']))
+	{
+		header('Location: ' . filter_var($base_url, FILTER_SANITIZE_URL));
+	}
+	else
+	{
+		$user['email']=$_SESSION['user_email'];
+		$user['user_id']=$_SESSION['user_id'];
+		if(!userIsAdmin($user))
+		{
+	  			header('Location: ' . filter_var($base_url, FILTER_SANITIZE_URL));
+		}
+	}
+?>
 <!DOCTYPE html>
 <html> 
 <head>
@@ -24,9 +42,6 @@
   			    <li><a class="scroll" href="#recommend">Acknowledge</a></li>
             	<li><a class="scroll" href="#search">View Approved</a></li>
   			  </ul>
-  			   <div id="button">
-              <button class="btn btn-default" type="submit" style="float:right;">Login</button>
-              </div>
  			 </div>
 		</div>
 		</header>	

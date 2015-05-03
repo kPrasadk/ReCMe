@@ -14,8 +14,39 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="assets/js/smoothScroll.js"></script>
 </head>
+<?php
+		require_once ("includes/credentials.php");
+		require_once ("functions.php");
+		session_start();
+		//var_dump($_SESSION);
+		if(!isset($_SESSION['token']))
+		{
+?>
+<!--!!!!!!!!========HomePage==========-->
+		<section id="home">
+			<div class="homepage">
+              <div id="button" class="text-center">
+              <a href="login/"class="btn btn-danger" type="submit">Login Using NITC Mail ID</a>
+              </div>
+			</div>
 
-<body onload="updateTopRec();">
+		</section>	
+<?php
+		}
+		else
+		{
+			$user['email']=$_SESSION['user_email'];
+			$user['user_id']=$_SESSION['user_id'];
+			if(userIsAdmin($user))
+			{
+				$url=$base_url."admin.php";
+				echo $url;
+				echo filter_var($url, FILTER_SANITIZE_URL);
+	  			header('Location: ' . filter_var($url, FILTER_SANITIZE_URL));
+			}
+?>
+		
+		<body onload="updateTopRec();">
 		<header>
 		<div id="sse1">
   			<div id="sses1">
@@ -24,21 +55,9 @@
   			    <li><a class="scroll" href="#recommend">Recommend</a></li>
             	<li><a class="scroll" href="#search">Search</a></li>
               </ul>
-              <div id="button">
-              <button class="btn btn-default" type="submit" style="float:right;">Login</button>
-              </div>
  			 </div>
 		</div>
-		</header>	
-
-		<!--!!!!!!!!========HomePage==========-->
-		<section id="home">
-			<div class="homepage">
-
-				
-			</div>
-
-		</section>
+		</header>
 
 
 		<!--!!!======Recommend page===========!!!-->
@@ -164,5 +183,7 @@
         			xmlhttp.send();	
 				}
 		</script>	
- 
+<?php
+		}
+?> 
 </html>
