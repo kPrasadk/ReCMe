@@ -34,7 +34,10 @@
 		<!--!!!!!!!!========HomePage==========-->
 		<section id="home">
 			<div class="homepage">
-
+				<div id="welcome">
+					<br><br><br><br><br>
+					<h1 style="font-size:56px;">Hello...:)</h1>
+				</div>
 				
 			</div>
 

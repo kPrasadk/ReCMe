@@ -6,7 +6,6 @@
 					FROM User 
 					WHERE UserID={$User['userid']},Email={$User['email']}";
 		$queryStatus=mysqli_query($con,$sql_query);
-
 		if(mysqli_fetch_array($queryStatus)==false)
 		{
 			$sql_num="SELECT *
