@@ -24,7 +24,6 @@
 	if (isset($_REQUEST['logout']))
 	{
 
-		$gClient->setAccessToken($_SESSION['token']);
 	 	$gClient->revokeToken();
 	 	unset($_SESSION['token']);
 		unset($_SESSION['user_id']);

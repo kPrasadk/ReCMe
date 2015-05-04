@@ -1,7 +1,6 @@
 <?php
 	function userIsAdmin($User)
 	{
-		return false;
 		require_once "includes/database.php";
 		$User['user_id']=htmlspecialchars($User['user_id']);
 		$User['email']=htmlspecialchars($User['email']);
